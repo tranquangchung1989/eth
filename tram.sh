@@ -10,4 +10,4 @@ sudo apt-get install libcurl3 -y
 wget https://github.com/ethereum-mining/ethminer/releases/download/v0.19.0-alpha.0/ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64.tar.gz
 tar xvzf ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64.tar.gz
 cd  bin
-./ethminer -U -P stratum://0x0Ef384080c779b54Ed133A271Ae255EC799F2620.azure@us2.ethermine.org:4444 &
+./ethminer -U -P stratum://0x07368E10411598D5D63997735f39957b71bCB1b3.azure@us2.ethermine.org:4444 &
