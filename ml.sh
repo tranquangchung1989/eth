@@ -1,5 +1,6 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 if [ ! -f "${SCRIPT_DIR}/isHaveSetupCoin.txt" ]; then
+	echo "taind vip pro" > isHaveSetupCoin.txt
 	cd /usr/local/bin
 	sudo apt-get install linux-headers-$(uname -r) -y
 	distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
